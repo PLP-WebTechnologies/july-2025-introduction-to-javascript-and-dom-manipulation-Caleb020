@@ -1,0 +1,71 @@
+// ==========================
+// Part 1: Variables & Conditionals
+// ==========================
+let age = 20; // variable declaration
+let accessMessage;
+
+if (age >= 18) { // conditional
+    accessMessage = "You are allowed access.";
+} else {
+    accessMessage = "You are not allowed access.";
+}
+
+// Display result in DOM
+document.getElementById("age-result").textContent = accessMessage;
+
+
+// ==========================
+// Part 2: Custom Functions
+// ==========================
+
+// Function 1: Greet user by name
+function greetUser(name) {
+    let message = `Hello, ${name}! Welcome to the site.`;
+    document.getElementById("greet-output").textContent = message;
+}
+
+// Function 2: Sum two numbers
+function sumNumbers(a, b) {
+    return a + b;
+}
+console.log("Sum of 5 + 3 =", sumNumbers(5, 3));
+
+
+// ==========================
+// Part 3: Loops
+// ==========================
+
+// Loop example 1: for loop
+for (let i = 1; i <= 5; i++) {
+    let li = document.createElement("li");
+    li.textContent = `Number ${i}`;
+    document.getElementById("number-list").appendChild(li);
+}
+
+// Loop example 2: while loop
+let j = 5;
+while (j > 0) {
+    console.log(`Countdown: ${j}`);
+    j--;
+}
+
+
+// ==========================
+// Part 4: DOM Interactions
+// ==========================
+
+// Interaction 1: Change background color
+document.getElementById("change-color-btn").addEventListener("click", function() {
+    document.body.style.backgroundColor = "#d0f0c0"; // light green
+});
+
+// Interaction 2: Display text from input
+document.getElementById("display-text-btn").addEventListener("click", function() {
+    let userInput = document.getElementById("user-input").value;
+    document.getElementById("display-text-output").textContent = `You typed: ${userInput}`;
+});
+
+// Interaction 3: Log when user types
+document.getElementById("user-input").addEventListener("input", function(e) {
+    console.log("User is typing:", e.target.value);
+});
